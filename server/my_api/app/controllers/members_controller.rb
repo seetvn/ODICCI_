@@ -7,7 +7,7 @@ class MembersController < ApplicationController
 
   def handle_options
     # Set the appropriate CORS headers
-    headers['Access-Control-Allow-Origin'] = '*' # Replace '*' with your desired origin
+    headers['Access-Control-Allow-Origin'] = '*' 
     headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, PATCH, DELETE, OPTIONS'
     headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
 
@@ -29,7 +29,6 @@ class MembersController < ApplicationController
     date_of_birth=params[:member]["DateOfBirth"]
     
     if check(email,phone_number)==true
-      #def create (first_name,last_name,phone_number,email,date_of_birth)
       add_members(first_name,last_name,phone_number,email,date_of_birth)
       render json: params[:members],status: :created
     else
