@@ -37,6 +37,11 @@ def add_members (first_name,last_name,phone_number,email,date_of_birth)
 
 
     response = http.request(request)
+    if response.code==200 
+        return :created, response.read_body  
+    else 
+        return response.code, response.read_body
+        
     
 
 end

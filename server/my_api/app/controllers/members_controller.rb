@@ -30,8 +30,8 @@ class MembersController < ApplicationController
     
     if check(email,phone_number)==true
       #def create (first_name,last_name,phone_number,email,date_of_birth)
-      add_members(first_name,last_name,phone_number,email,date_of_birth)
-      render json: params[:members],status: :created
+      status_, detail=add_members(first_name,last_name,phone_number,email,date_of_birth)
+      render detail, status: status_
     else
       render json: { error: 'Resource already exists' }, status: :conflict
 
