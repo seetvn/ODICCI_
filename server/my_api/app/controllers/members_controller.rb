@@ -17,7 +17,6 @@ class MembersController < ApplicationController
 
   def show
     # Implementation for the 'show' action
-    render json: params[:members]
   end
 
   def create
