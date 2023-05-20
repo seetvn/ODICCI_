@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :members, only: [:index, :show ,:create, :update, :destroy]
   #get "/members", to: " members#index"
 
+  #handles CORS
   match '/members', to: 'members#handle_options', via: :options
 
 
