@@ -6,6 +6,7 @@ require 'openssl'
 
 require 'json'
 
+#checks if user currently exists
 def check(user_email, user_phone_number)
   api_key = "pk_51ca0a0d5efd7ba50730d4dd698375bc7c"
   url = URI("https://a.klaviyo.com/api/v2/list/R2t5tv/get-members?api_key=#{api_key}")
@@ -23,7 +24,7 @@ def check(user_email, user_phone_number)
   return response_body.empty?
 end
 
-
+#adds user
 def add_members (first_name,last_name,phone_number,email,date_of_birth)
     api_key = "pk_51ca0a0d5efd7ba50730d4dd698375bc7c"
     url = URI("https://a.klaviyo.com/api/v2/list/R2t5tv/members?api_key=#{api_key}")
